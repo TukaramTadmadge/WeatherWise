@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --color: rgb(0, 9, 128);
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+main .container {
+    background-color: white;
+    width: 350px;
+    border: 1px var(--color) solid;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 50px 5px var(--color);
+}
+
+.container h1 {
+    font-size: 22px;
+    padding: 15px;
+    font-weight: 500;
+    color: var(--color);
+}
+
+.container h1 i {
+    font-size: 20px;
+    position: relative;
+    left: -20%;
+    display: none;
+}
+
+.container hr {
+    background-color: var(--color);
+    margin-bottom: 20px;
+}
+
+.container .subContainer {
+    display: block;
+}
+
+.subContainer p {
+    background-color: #f8d7da;
+    margin: auto;
+    width: 85%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #721c24;
+    border-radius: 10px;
+}
+
+.subContainer .addError {
+    display: none;
+}
+
+.subContainer input {
+    margin-top: 10px;
+    height: 50px;
+    width: 85%;
+    border: 1px solid var(--color);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--color);
+}
+
+::placeholder {
+    color: var(--color);
+}
+
+.subContainer input:focus {
+    outline: none;
+    border: 2px var(--color) solid;
+}
+
+.subContainer button {
+    width: 150px;
+    height: 50px;
+    margin: 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    background-color: var(--color);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.subContainer button:hover {
+    transform: scale(1.05);
+}
+
+
+.weatherInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.weatherInfo.displayInfo {
+    display: none;
+}
+
+
+.container .weatherInfo img {
+    width: 125px;
+}
+
+.weatherInfo .temp {
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.weatherInfo .temp .deg {
+    position: relative;
+    top: -10px;
+    font-size: 40px;
+}
+
+.weatherInfo .weather {
+    font-size: 21px;
+    text-align: center;
+    margin: -5px 20px 5px;
+}
+
+.weatherInfo .location {
+    font-size: 19px;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.weatherInfo .location i {
+    font-size: 22px;
+    margin: 4px 5px 0 0;
+    color: var(--color);
+}
+
+.weatherInfo .bottom-details {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+}
+
+.bottom-details .column {
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.column i {
+    color: var(--color);
+    font-size: 40px;
+}
+
+.column.humidity {
+    border-left: 1px solid #ccc;
+}
+
+.column .details {
+    margin-left: 13px;
+}
+
+.details .temp,
+.humidity span {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -3px;
+}
+
+.details .temp .deg {
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
+}
+
+.column .details p {
+    font-size: 14px;
+    margin-top: -6px;
+}
+
+.humidity i {
+    font-size: 37px;
+}
+
+.color-palette {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(40, 38, 38, 0.264);
+    border-radius: 50px;
+    padding: 3px;
+}
+
+.color-palette .colorBtn {
+    background-color: red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 6px;
+    cursor: pointer;
+}
+
+/* COPYRIGHT */
+
+.copyright {
+    position: absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.copyright p a {
+    color: white;
+    font-weight: 500;
+}
+
+.copyright p a:hover {
+    color: white;
+    font-weight: 500;
+    opacity: .8;
+}
+
+@media only screen and (max-width: 600px) {
+    .color-palette {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        left: 50%;
+        transform: translate(-50%, 400%);
+        padding: 0;
+        margin: 0;
+        width: 400px;
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    main .container {
+        width: 300px;
+    }
+
+    .color-palette {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 10px;
+        width: 230px;
+        height: 100px;
+        transform: translate(-50%, 200%);
+        margin-bottom: 10px;
+    }
+
+    .color-palette.display {
+        display: none;
+    }
+}
